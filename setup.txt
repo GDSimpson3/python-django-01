@@ -1,0 +1,37 @@
+set up//
+
+1)  pip install pipenv || pip3 install pipenv || python3 -m pip install pipenv (installs pipenv)
+
+2) pipenv shell (creates Pipfile)
+
+3) pipenv install django (installs django in the virtualenv (gets added to Pipfile) and creates Pipfile.lock)
+
+4) django-admin startproject pollster (pollster is the name, could be anything, and it creates the folder with the project,)
+    inside the folder you will see a pollster folder and a manage.py, its kinda like an index.html in react but python, we use it to run the projects,
+    in the pollster file you will see
+        1)the init file is empty, duh
+        2)the settings file is where you put the base directory and apps and security key for prod and db
+        3)the urls file is the routes
+        4)wsgi, server stuff
+
+random knowledge: python has project (this is where you will have your website on) and apps (like templates, if you want a blog app, you will get a blog app, if you want a polls app, you will get a polls app)
+
+5)to run server do, python3 manage.py runserver 8081, this will run the server on port 8081
+
+6)you need to migrate it to set up some database connections, to run it: python3 manage.py migrate
+
+7) now to create an app you need to run this and specify what is the app type: python3 manage.py startapp polls
+    this will create a set of files like so:
+        1)
+        2)
+        3)admin.py to add questions to the admin are you add them here
+        4)apps.py, we dont touch, its just the LAW
+        5)models.py, this is where we create our database models, here is where we will ad the questions and choices
+        6) test.py, this is where tests go but we won't use them
+        7)views.py, this is where you can render templates
+
+7.1) you might need to run : python3 manage.py makemigrations
+
+8) next, to migrate you should do this: python manage.py migrate
+
+yarn install frozen

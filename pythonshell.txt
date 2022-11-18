@@ -1,0 +1,33 @@
+to add the new database models to the database you need to create a new migration
+
+1) to get the shell type python3 manage.py shell, you need to do this to sort out the database columns and rows
+
+2) so first you will need to import the models like so : from polls.models import Question, Choice
+
+3) next to see all of the questions type: Question.objects.all()
+
+4) first we should import the time module from django utils, you can do it like so : from django.utils import timezone
+
+5) then you should set a var (q) to a question like so : q = Question(question_text="What is your favorite Python Framework?", pub_date=timezone.now())
+
+6) then you can save it like so: q.save()
+
+7) you can also check the id like so: q.id
+
+8) to check the text: q.question_text
+
+9) you can also add various filter like so:
+    Question.objects.filter(id=1)
+    Question.objects.get(pk=1) (pk is primary key)
+    q = Question.objects.get(pk=1) (pk is primary key)
+
+10) now to add some choices
+
+11) you can see your choices: q.choice_set.all()
+
+12) to add a choice do this:  q.choice_set.create(choice_text='timezone', votes=0)
+                              q.choice_set.create(choice_text='Color', votes=0)
+
+13) to quit from the shell type: quit()
+
+14) now create an admin user like so: python manage.py createsuperuser
